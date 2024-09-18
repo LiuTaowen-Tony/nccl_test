@@ -32,7 +32,7 @@ echo $NCCL_SOCKET_IFNAME
 if [ $(hostname) == "$HOST_NAME" ] ; then
     torchrun --nnodes=2 --nproc_per_node=4 --node_rank=0 --rdzv_id=456 --rdzv_backend=c10d --rdzv_endpoint=$MASTER_ADDR:$MASTER_PORT main.py 50 10
 else
-    torchrun --nnodes=2 --nproc_per_node=4 --node_rank=1 --rdzv_id=456 --rdzv_backend=c10d --rdzv_endpoint=$MASTER_ADDR:$MASER_PORT main.py 50 10
+    torchrun --nnodes=2 --nproc_per_node=4 --node_rank=1 --rdzv_id=456 --rdzv_backend=c10d --rdzv_endpoint=$MASTER_ADDR:$MASTER_PORT main.py 50 10
 fi
 
 
